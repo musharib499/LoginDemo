@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoAppAssigment</string>
+    <string name="submit">Submit</string>
+    <string name="enter_confirm_password">Enter Confirm password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_email">Enter Email</string>
+</resources>

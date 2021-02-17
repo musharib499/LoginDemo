@@ -17,55 +17,75 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.RegistrationFragment">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/tvEmail"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/llTvEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/end"
             app:layout_constraintStart_toStartOf="@id/start"
             app:layout_constraintTop_toTopOf="@id/top"
-            android:inputType="textEmailAddress"
-            android:text="@={vm.email}"
-            android:hint="@string/enter_email"
+            app:errorEnabled="true">
 
-            />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textEmailAddress"
+                android:text="@={vm.email}"
+                android:hint="@string/enter_email"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/llTvPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/llTvEmail"
+            app:layout_constraintStart_toStartOf="@id/llTvEmail"
+            app:layout_constraintTop_toBottomOf="@id/llTvEmail"
+            app:errorEnabled="true">
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/tvPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="@id/tvEmail"
-            app:layout_constraintStart_toStartOf="@id/tvEmail"
-            app:layout_constraintTop_toBottomOf="@id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:inputType="textPassword"
             android:text="@={vm.password}"
             android:hint="@string/enter_password"
 
             />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/tvPasswordConfirm"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/llTvPasswordConfirm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="@id/tvPassword"
-            app:layout_constraintStart_toStartOf="@id/tvPassword"
-            app:layout_constraintTop_toBottomOf="@id/tvPassword"
+            app:layout_constraintEnd_toEndOf="@id/llTvPassword"
+            app:layout_constraintStart_toStartOf="@id/llTvPassword"
+            app:layout_constraintTop_toBottomOf="@id/llTvPassword"
+            app:errorEnabled="true">
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tvPasswordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:inputType="textPassword"
             android:text="@={vm.confirmPassword}"
             android:hint="@string/enter_confirm_password"
             />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/submit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="@id/tvPasswordConfirm"
-            app:layout_constraintStart_toStartOf="@id/tvPasswordConfirm"
-            app:layout_constraintTop_toBottomOf="@id/tvPasswordConfirm"
+            app:layout_constraintEnd_toEndOf="@id/llTvPasswordConfirm"
+            app:layout_constraintStart_toStartOf="@id/llTvPasswordConfirm"
+            app:layout_constraintTop_toBottomOf="@id/llTvPasswordConfirm"
             android:onClick="@{()->frament.onSubmit()}"
             android:text="@string/submit"
 
